@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
 
     // FixedUpdate adalah update yang lebih konsisten jeda pemanggilannya
     // cocok digunakan jika karakter memiliki Physic (Rigidbody, dll)
-    private void FixedUpdate()
+    private void FixedUpdate ()
     {
         if (LevelManager.Instance.IsOver)
         {
@@ -21,16 +21,16 @@ public class Bullet : MonoBehaviour
         {
             if (!_targetEnemy.gameObject.activeSelf)
             {
-                gameObject.SetActive(false);
+                gameObject.SetActive (false);
                 _targetEnemy = null;
                 return;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, _targetEnemy.transform.position, _bulletSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards (transform.position, _targetEnemy.transform.position, _bulletSpeed * Time.fixedDeltaTime);
 
             Vector3 direction = _targetEnemy.transform.position - transform.position;
-            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, targetAngle - 90f));
+            float targetAngle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, targetAngle - 90f));
         }
     }
 

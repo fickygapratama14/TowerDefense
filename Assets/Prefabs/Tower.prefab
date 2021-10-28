@@ -98,10 +98,11 @@ MonoBehaviour:
   _towerPlace: {fileID: 5136384525395811397}
   _towerHead: {fileID: 5183494840033133069}
   _shootPower: 1
-  _shootDistance: 1
+  _shootDistance: 5
   _shootDelay: 5
-  _bulletSpeed: 1
+  _bulletSpeed: 4
   _bulletSplashRadius: 0
+  _bulletPrefab: {fileID: 0}
 --- !u!61 &3380185699443109755
 BoxCollider2D:
   m_ObjectHideFlags: 0
